@@ -218,17 +218,6 @@ Performance was measured on 50 domain-specific queries using LLM-as-judge releva
 
 See the paper for full methodology and results.
 
-## Citation
-
-```bibtex
-@article{shetty2024noepsis,
-  title   = {Noepsis: A Self-Hostable Semantic Search Platform for Journals},
-  author  = {Shetty, Rithvik},
-  year    = {2024},
-  url     = {https://github.com/rshetty26/noepsis-semantic-search}
-}
-```
-
 ## License
 
 MIT — see [LICENSE](LICENSE).
