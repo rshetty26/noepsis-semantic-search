@@ -98,7 +98,7 @@ By default this reads from `xml/`. To use a different directory:
 python ingest_jats.py --xml-dir /path/to/your/xml
 ```
 
-Re-running is safe — records are upserted on the XML filename as a unique key.
+Re-running is safe - records are upserted on the XML filename as a unique key.
 
 ### 3. Generate embeddings
 
@@ -181,7 +181,7 @@ npm run dev
 
 Open `http://localhost:5173`. The frontend proxies API requests to `http://localhost:8000`, so the server must be running for semantic search to work.
 
-The frontend is a reference implementation — journal publishers can build their own interface against the REST API to match their platform's design.
+The frontend is a reference implementation - journal publishers can build their own interface against the REST API to match their platform's design.
 
 ## Configuration
 
@@ -194,13 +194,15 @@ The frontend is a reference implementation — journal publishers can build thei
 
 The five models evaluated in the paper are:
 
-| Model | Params | Dim | Notes |
-|---|---|---|---|
-| `BAAI/bge-base-en-v1.5` | 109M | 768 | **Recommended** — highest relevance score at lowest cost |
-| `BAAI/bge-large-en-v1.5` | 335M | 1024 | Highest MRR/NDCG; 3× larger |
-| `intfloat/e5-large-v2` | 335M | 1024 | Strong retrieval; prepend "query: " to queries |
-| `thenlper/gte-large` | 335M | 1024 | Competitive performance |
-| `sentence-transformers/all-mpnet-base-v2` | 109M | 768 | Well-established baseline |
+| Model | Params | Embedding Dim | Disk Size | Max Tokens |
+|---|---|---|---|---|
+| bge-large-en-v1.5 | 335.1M | 1024 | ~1.28 GB | 512 |
+| e5-large-v2 | 335.1M | 1024 | ~1.28 GB | 512 |
+| gte-large | 335.1M | 1024 | ~640 MB | 512 |
+| all-mpnet-base-v2 | 109.5M | 768 | ~418 MB | 384 |
+| bge-base-en-v1.5 | 109.5M | 768 | ~419 MB | 512 |
+
+At roughly one-third the size (109.5M vs. 335.1M parameters, 419 MB vs. 1.28 GB on disk), `bge-base-en-v1.5` achieves the highest weighted relevance score while offering significantly faster inference and lower memory requirements, making it the most practical choice for journals deploying this system.
 
 ### Similarity score calibration
 
@@ -220,4 +222,4 @@ See the paper for full methodology and results.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
