@@ -3,7 +3,7 @@
 A self-hostable semantic search platform for academic journals.
 
 Noepsis uses sentence transformer embeddings to enable natural language search over a journal corpus. Researchers can query using full sentences or even paste an abstract to find thematically related work, without needing to identify the right keywords. All components are open-source and deployable on commodity hardware.
-
+ 
 ## Architecture
 
 ```
