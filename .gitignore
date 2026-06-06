@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Output
+processed.csv
+
+# Article source files (large, journal-specific)
+xml/
+pdf/
+
+# Node
+web/node_modules/
+web/dist/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# IDE / Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
