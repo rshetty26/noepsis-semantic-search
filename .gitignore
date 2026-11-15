@@ -12,6 +12,9 @@ processed.csv
 xml/
 pdf/
 
+# Paper drafts (kept local, not tracked)
+paper/
+
 # Node
 web/node_modules/
 web/dist/
@@ -23,6 +26,7 @@ web/dist/
 
 # IDE / Claude Code
 .claude/
+.vscode/
 
 # OS
 .DS_Store
